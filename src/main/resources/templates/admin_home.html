@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<!-- ====== All meta tag ============== -->
+	<meta charset="UTF-8" />
+
+	<title> Home | Admin Panel | ROKOMARI</title>
+
+
+	<!--load google fonts-->
+	<link href='http://fonts.googleapis.com/css?family=PT+Mono%7cOpen+Sans:400italic,400' rel='stylesheet' type='text/css'>
+
+
+	<!-- ====== All CSS ============== -->
+	<link rel="stylesheet" th:href="@{/css/normalize.css}" />
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+	<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" />
+	<link rel="stylesheet" th:href="@{/css/animate.css}" />
+	<link rel="stylesheet" th:href="@{/css/mabc.css}" />
+	<link rel="stylesheet" th:href="@{/style.css}" />
+	<link rel="stylesheet" th:href="@{/css/responsive.css}" />
+
+	<!-- Loding JQUERY and Google Map -->
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+
+</head>
+<body>
+<!--Starting point of My Code||||||||||||||||||||||||||||||||-->
+	  
+	  <div class="home-tab">
+		<div class="container">
+			
+			<div>
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+				<li role="presentation"><a href="#patient_list" aria-controls="profile" role="tab" data-toggle="tab">patient List</a></li>
+				<li role="presentation"><a href="#doctor_list" aria-controls="messages" role="tab" data-toggle="tab">Doctor List</a></li>
+				<li role="presentation"><a href="#add" aria-controls="settings" role="tab" data-toggle="tab">Add Doctor/Patient</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="home">
+					<h3>Welcome To Admin Pannel</h3>
+				</div>
+				
+				<div role="tabpanel" class="tab-pane" id="patient_list">
+					<table class="table table-striped">
+					
+					  <tr>
+						<td>Id</td>
+						<td>Name</td>
+						<td>Age</td>
+						<td>Gender</td>
+						<td>Occupation</td>
+						<td>Symptom Summary</td>
+						<td>Action</td>
+						<td>Action</td>
+					  </tr>
+
+						<tr th:each="patient : ${patientList}">
+							<td><p th:text="${patient.id}"></p></td>
+							<td><p th:text="${patient.name}"></p></td>
+							<td><p th:text="${patient.age}"></p></td>
+							<td><p th:text="${patient.gender}"></p></td>
+							<td><p th:text="${patient.occupation}"></p></td>
+							<td><p th:text="${patient.symptom_summary}"></p></td>
+							<td><a th:href="@{'/admin/patient/update/' + ${patient.id} }">Update</a></td>
+							<td><a th:href=" @{'/admin/patient/delete/' + ${patient.id} }">Delete</a></td>
+						</tr>
+					  
+					</table>
+				</div>
+				
+				
+				<div role="tabpanel" class="tab-pane" id="doctor_list">
+					<table class="table table-striped">
+
+						<tr>
+							<td>Name</td>
+							<td>Dept</td>
+							<td>Joining</td>
+							<td>Action</td>
+							<td>Action</td>
+						</tr>
+
+						<tr th:each="doctor : ${doctorList}">
+							<td><p th:text="${doctor.name}"></p></td>
+							<td><p th:text="${doctor.dept}"></p></td>
+							<td><p th:text="${doctor.joining}"></p></td>
+							<td><a th:href="@{'/admin/doctor/update/' + ${doctor.id} }">Update</a></td>
+							<td><a th:href="@{'/admin/doctor/delete/' + ${doctor.id} }">Delete</a></td>
+						</tr>
+
+					</table>
+				</div>
+				
+				<div role="tabpanel" class="tab-pane" id="add">
+					<button class="reg-btn btn btn-default" type="button"><a href="/admin/add_doctor">Add Doctor</a> </button>
+					<button class="reg-btn btn btn-default" type="button"><a href="/admin/add_patient">Add Patient</a> </button>
+				</div>
+			  </div>
+
+		</div>
+			
+		</div>
+	  </div>
+	  
+	  
+	  
+	  <!--Ending point of my code|||||||||||||||||||||||||||||||||||-->
+
+		<!-- =========== All JS ============ -->
+		<script th:src="@{/js/vendor/modernizr-2.8.3.min.js}"></script>
+		<script th:src="@{/js/vendor/jquery-1.11.3.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/mabc.js}"></script>
+		<script th:src="@{/js/main.js}"></script>
+       
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- ====== All meta tag ============== -->
+    <meta charset="UTF-8" />
+
+    <title> Add New Doctor | Admin Panel | ROKOMARI</title>
+
+
+    <!--load google fonts-->
+    <link href='http://fonts.googleapis.com/css?family=PT+Mono%7cOpen+Sans:400italic,400' rel='stylesheet' type='text/css'>
+
+
+    <!-- ====== All CSS ============== -->
+    <link rel="stylesheet" th:href="@{/css/normalize.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/animate.css}" />
+    <link rel="stylesheet" th:href="@{/css/mabc.css}" />
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/responsive.css}" />
+
+    <!-- Loding JQUERY and Google Map -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+
+</head>
+<body>
+<!--Starting point of My Code||||||||||||||||||||||||||||||||-->
+
+<div class="login-form">
+    <div class="container">
+
+        <form th:action="@{/admin/add_doctor}" th:object="${doctor}" method="post">
+            <input type="text" th:field="*{name}" th:placeholder="Name" /><br />
+            <input type="text" th:field="*{dept}" th:placeholder="dept" /><br />
+            <input type="date" pattern="yyyy-MM-dd"   th:field="*{joining}" th:placeholder="joining" /><br />
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        </form>
+
+    </div>
+</div>
+
+
+
+<!--Ending point of my code|||||||||||||||||||||||||||||||||||-->
+
+<!-- =========== All JS ============ -->
+<script th:src="@{/js/vendor/modernizr-2.8.3.min.js}"></script>
+<script th:src="@{/js/vendor/jquery-1.11.3.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/mabc.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+/*-------- My Custom CSS --------------*/
+/* --------- general ----------- */
+
+*{
+    padding: 0;
+    margin: 0;
+
+}
+body{
+    max-width: 1040px;
+    margin: 10px auto;
+    padding: 0;
+    position: relative;
+    background: #F1F1F1;
+    width: 100%;
+    font-family: 'PT Mono', monospace ;
+}
+.fix{overflow: hidden;}
+
+/* --- typography --------------------- */
+/*headings*/
+
+
+a:hover,a:focus{
+    text-decoration: none;
+    outline: none
+
+}
+
+
+ul,ol{
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+
+.float-left{float: left;}
+.float-right{float: right;}
+a{text-decoration: none;}
+a:hover{text-decoration: none;}
+.i_b{display: inline-block;}
+img{width: 100%;height: auto;}
+
+.header_text{
+    text-align: center;
+    margin: 55px auto;
+    color: rgba(255,112,51,1);
+}
+.m_a{margin: 0 auto;}
+
+
+
+/*-- My CSS --*/
+
+.login-form{
+max-width:560px;
+margin:auto auto;
+padding-top:100px;
+}
+input{max-width:500px;}
+
+.reg-btn{margin-top:15px;}
+
+
+
+
+
+
+
+
+
+
+
+
+

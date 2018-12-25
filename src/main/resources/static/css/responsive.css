@@ -1,0 +1,51 @@
+@media screen and (max-width:1024px){
+     body{max-width: 768px;} 
+    #menu ul li a{max-width:120px;} 
+}
+
+@media screen and (max-width:768px){
+    
+    body{max-width: 640px;} 
+    
+    .personal_information pre{font-size: 12px;}
+    
+    #menu ul li a{max-width:120px;}    
+}
+
+@media screen and (max-width:640px){
+    body{max-width: 480px;} 
+    
+    
+    .basic_info,.profile_details{display: block;width: 100%; float: none;}
+    .basic_info{}
+    
+    #menu ul li a{max-width:82px;} 
+    #menu ul li a span{font-size: 10px;}
+    #menu ul li a i{font-size: 30px;}
+    
+    .copyright,#social_icon{width: 100%;text-align: center;}
+    .copyright p{font-size: 10px;}
+    #social_icon ul li{float: none;}
+}
+
+
+@media screen and (max-width:480px){
+    body{
+        max-width: 320px;
+    }
+    span,p{margin: 0;padding: 0;}
+    #menu ul li a{max-width:48px;} 
+    #menu ul li a span{font-size: 6px;}
+    #menu ul li a i{font-size: 14px;font-weight: bold;}
+    
+    .profile{width: 100%;margin: 35px auto;}
+    .basic_info{width: 100%;float: none;display:block;}
+    .profile_details{ width: 100%;float: none;display:inline;}
+    
+    .input_area,.adress{width: 100%;float: none;}
+    .adress{margin-top: 30px;border-top: 1px solid white;}
+}
+
+@media screen and (max-width:320px){
+    .read_more a{padding:10px 10px;}
+}

@@ -19,12 +19,22 @@ public class CustomUserDetailsService implements UserDetailsService {
     UserDao userDao;
     @Autowired
     RoleDao roleDao;
+    String roleFixing;
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         ApplicationUser u = loadApplicationUserByUsername(s);
        // return new User("arif","123456",AuthorityUtils.createAuthorityList());
-        return User.withDefaultPasswordEncoder().username(u.getEmail()).password(u.getPassword()).roles("USER").build();
+
+        if(userDao.findByUsername(u.getEmail()).getRole().getName().equals("ROLE_USER"))
+        {
+            roleFixing = "USER";
+        }
+        else {
+            roleFixing = "ADMIN";
+        }
+
+        return User.withDefaultPasswordEncoder().username(u.getEmail()).password(u.getPassword()).roles(roleFixing).build();
     }
 
     public ApplicationUser loadApplicationUserByUsername(String username)
